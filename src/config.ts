@@ -2,7 +2,7 @@ import type { SocialObjects } from "@/lib/types";
 
 export const SITE = {
   website: "https://doc.dealdroid.net", // replace this with your deployed domain
-  author: "HYP3R00T",
+  author: "Apirak",
   desc: "Documentation template using Astro and Shadcn",
   title: "DealDroid Doc",
   ogImage: "og-image.jpg",

@@ -3,8 +3,8 @@ import type { SocialObjects } from "@/lib/types";
 export const SITE = {
   website: "https://doc.dealdroid.net", // replace this with your deployed domain
   author: "Apirak",
-  desc: "Documentation template using Astro and Shadcn",
-  title: "DealDroid Doc",
+  desc: "Documentation how to use DealDroid Chatbot",
+  title: "DealDroid Document",
   ogImage: "og-image.jpg",
   repo: "https://github.com/HYP3R00T/CelestialDocs",
 };
@@ -21,15 +21,16 @@ export const menu_items: { title: string; href: string }[] = [
   // },
 ];
 
-// Just works with top-level folders and files. For files, don't add extension as it looks for the slug, and not the file name.
+// Just works with top-level folders and files. 
+// For files, don't add extension as it looks for the slug, and not the file name.
 export const side_nav_menu_order: string[] = [
   "getting-started",
   "guides",
-  "guides/pages",
-  "guides/table-of-contents",
-  "guides/sidebar-navigation",
-  "custom-components",
-  "reference",
+  // "guides/pages",
+  // "guides/table-of-contents",
+  // "guides/sidebar-navigation",
+  // "custom-components",
+  // "reference",
 ];
 
 // Don't delete anything. You can use 'true' or 'false'.
@@ -51,7 +52,7 @@ export const Socials: SocialObjects = [
     name: "Github",
     href: "https://github.com/HYP3R00T/",
     linkTitle: ` ${SITE.title} on Github`,
-    active: true,
+    active: false,
   },
   {
     name: "Facebook",
@@ -73,7 +74,7 @@ export const Socials: SocialObjects = [
   },
   {
     name: "Mail",
-    href: "mailto:rajesh@hyperoot.dev",
+    href: "mailto:apirakb@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
   },
@@ -141,6 +142,6 @@ export const Socials: SocialObjects = [
     name: "Mastodon",
     href: "https://mastodon.social/@hyp3r00t",
     linkTitle: `${SITE.title} on Mastodon`,
-    active: true,
+    active: false,
   },
 ];

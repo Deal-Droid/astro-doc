@@ -12,16 +12,66 @@ import line_pic_6 from '../../../assets/images/line/pic_6.png';
 import line_pic_7 from '../../../assets/images/line/pic_7.png';
 import line_pic_8 from '../../../assets/images/line/pic_8.png';
 
-เพื่อที่จะต่อ line ต้องมี parameter ดังต่อไปนี้
+การเชื่อมต่อ Line Channel จะทำให้ Line สามารถส่งข้อมูลการสนทนาของลูกค้าจาก Line OA 
+มายัง Dealdroid ได้ โดยการเชื่อมต่อจะไม่เหมือน Facebook ที่สามารถเชื่อมต่อผ่านโปรแกรม Dealdroid ได้เลย
 
-## ขั้นตอนการต่อ Line Channel
+ในกรณีของ Line ผู้ใช้ต้องเข้าไปเปิด [Developer Account](https://developers.line.biz) ก
+ับทาง Line ก่อน แล้วจึงนำข้อมูลสำหรับการเชื่อมต่อมาใส่ในโปรแกรม Dealdroid อีกที โดยขั้นตอนอย่างละเอียดมี 3 ขั้นดังนี้
 
+### 1. เข้าหน้าเชื่อมต่อ Line
 
+สร้าง Line Channel เพื่อเริ่มใส่รหัสสำหรับการเชื่อมต่อ
 <Image src={line_pic_1} alt="Show position to get list secret id" />
+1. เข้าหน้า Channel ซึ่งจะแสดงช่องทางทั้งหมดที่ต่อเอาไว้แล้ว
+2. กดปุ่ม Create Line Channel เพื่อเปิด Form กรอกรหัส
+
+กำหนดชื่อและรูปของ Channel เอาไว้ เพื่อให้จำได้ตอนเข้ามาที่หน้า Channel
 <Image src={line_pic_2} alt="Show position to get list secret id" />
+1. ตั้งชื่อ Channel
+2. เลือกรูป Cannel
+
+ตอนนี้เราจะมี Channel แล้ว แต่ยังไม่สามารถเชื่อมต่อเข้ากับ Line OA ได้ 
+เราต้องไปนำข้อมูลอื่นๆ จาก Line มากรอกไว้ในระบบก่อน
+
+---
+
+### 2. เข้า Line Console 
+
+เข้าเว็บไซต์ [Line Developer](https://developers.line.biz) แล้วเข้าหน้า Console
 <Image src={line_pic_3} alt="Show position to get list secret id" />
+1. ในกรณีที่ยังไม่ได้ Login ระบบจะแสดงปุ่มให้ Login ก่อน
+2. ในกรณีที่ Login แล้ว ระบบจะให้เข้าสู่หน้า Console
+
+---
+
+### 3. ดึงข้อมูลเพื่อต่อ Line Channel
+
+เข้าหน้า Channels ของเรา
 <Image src={line_pic_4} alt="Show position to get list secret id" />
+1. เลือก menu Dashboard เพื่อดู Channel ที่มีทั้งหมด
+2. เลือก Line OA ของเรา
+
+เข้ามาหน้า Line OA เพื่อ copy Channel ID มาใส่ที่ Dealdroid
 <Image src={line_pic_5} alt="Show position to get list secret id" />
+1. Copy เลข Channel ID ของ Line OA
+2. นำมาใส่ที่ช่อง Channel ID ของ Dealdroid
+
+ในหน้าเดียวกับที่เราได้ Channel ID ให้เลื่อนลงมาข้างล่างเพื่อหาเลข Channel Secret มาใส่ที่ Dealdroid
 <Image src={line_pic_6} alt="Show position to get list secret id" />
+1. Copy ข้อมูล Channel secret ขึ้นมา
+2. นำไปใส่ในช่อง Channel Secret ของโปรแกรม Dealdroid
+
+ส่วนของ WebHook จะอยู่ในหน้าถัดไปคือหน้า Messaging API โดยครั้งนี้เราต้อง copy จาก Dealdroid ไปใส่ที่ LineOA
 <Image src={line_pic_7} alt="Show position to get list secret id" />
+1. Copy Webhook URL จาก Dealdroid - ให้สังเกตว่าท้ายของ URL จะต้องมีเลข Channel ID อยู่ด้านท้ายด้วย
+2. เข้าหน้า Messaging API 
+3. กดปุ่ม Edit Webhook URL เพื่อใส่ URL ที่ copy มาลงไป
+
+ในหน้าเดียวกับที่เราใส่ Token ให้เราเลื่อนลงมาด้านล่าง เพื่อ copy Channel access token มาใส่ที่ Dealdroid
 <Image src={line_pic_8} alt="Show position to get list secret id" />
+1. เลื่อนลงมาด้านล่างสุดเพื่อ Copy ข้อมูล Channel access token
+2. นำข้อมูลมาใส่ในช่อง Channel Access Token
+
+---
+
+กดปุ่ม Create Line Channel เพื่อสร้าง Channel ขึ้นมา

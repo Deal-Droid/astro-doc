@@ -4,51 +4,30 @@ hide_breadcrumbs: true
 ---
 import Callout from "@/components/Callout.astro";
 
-**_Celestial Docs_** is a documentation theme built on top of the [Astro](https://astro.build/) framework. This guide will help you get started with a new project. 
+เริ่มต้นใช้งาน Dealdroid
 
-## Create a new project
+### **สร้าง Droid**
 
-To create your own documentation site using CelestialDocs, follow these steps:
-- Visit the [CelestialDocs GitHub](https://github.com/HYP3R00T/CelestialDocs) repository.
-- Click on the "Use this template" button.
-- Follow the prompts to create a new repository using this template.
+เริ่มต้นจากการสร้าง Account ก่อน
 
-<Callout variant="info">
-Try CelestialDocs in your browser: [open the template on StackBlitz](https://stackblitz.com/github/HYP3R00T/CelestialDocs)
-</Callout>
+- Droid Config
+- Channel: เชื่อม Droid เข้ากับ Page
+- Customer: เริ่มรับข้อความจากลูกค้า
 
-## Local Setup
-After creating your repository, follow these steps to set up the project locally:
+### **เชื่อมต่อ Facebook Page หรือ Line**
 
-Clone your repository:
+- [เชื่อมต่อ Line](/guides/connect-line)
+- เชื่อมต่อ Facebook Page
 
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-```
+### **กำหนดนิสัยของ Droid**
 
-Install dependencies:
+การกำหนดนิสัยของ Droid สามารถเริ่มทำได้ง่ายๆ ที่การเขียนคำอธิบายสินค้า 
+ไปจนถึงการบอกนิสัยที่ซับซ้อนโดยการปรับเปลี่ยนนิสัยไปตามความตั้งใจของลูกค้า 
+โดยเราจะมาดูเป็นขั้นๆ ดังนี้ครับ
 
-```bash
-npm install
-```
+1. Product: เพิ่มลดสินค้า และใส่คำอธิบายให้สินค้า
+2. Sale Script:  ใส่ตัวอย่างบทสนทนา
+3. Keyword: ตอบตามที่ตั้งคำถาม/คำตอบ เอาไว้ล่วงหน้า
+4. Intent: กำหนดนิสัยตามความตั้งใจของลูกค้า
 
-Start the development server:
 
-```bash
-npm run dev
-```
-
-Your documentation site will be available at `http://localhost:4321`.
-
-## Customizing Your Documentation
-CelestialDocs is built to be highly customizable. You can start editing the markdown files in the content folder to create your own documentation pages.
-
-To add new pages or sections, simply create new markdown files and folders inside the content directory, following the existing structure.
-
-## Next Steps
-
-- **Configure:** Learn about common options in ["Guides"](/guides).
-- **Authoring Content in Markdown:** Learn about options and features of ["Markdown"](/guides/authoring-content-in-md) guide.
-- **Components:** Discover built-in callout and more in the ["Components"](/custom-components) guide.
-- **Deploy:** Publish your work with the ["Deploy your site"](/resources/deployment) guide in the Astro docs.

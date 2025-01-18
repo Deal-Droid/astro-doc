@@ -7,6 +7,12 @@ const pathname: string = new URL(Astro.request.url).pathname;
 
 // To pass the tailwindcss classes to the astro component
 const { class: className } = Astro.props;
+
+// Helper function to check if item is a folder without index
+const isFolderWithoutIndex = (item: any) => {
+  const isFolder = item.children && item.children.length > 0;
+  return isFolder && !item.slug.endsWith('index');
+};
 ---
 
 <ul class:list={["list-none m-0", className]}>
@@ -19,16 +25,22 @@ const { class: className } = Astro.props;
           : capitalizeFirstLetter(item.slug.split("/").pop() || "");
         const className = `
         ${level === 0 ? "font-semibold" : "text-muted-foreground"}
-        ${pathname === "/" + item.slug ? "text-primary" : "no-underline"}
+        ${pathname === "/" + item.slug ? "" : "no-underline"}
         `.trim();
         return (
           <li class="w-full">
-            <a
-              href={`/${item.slug}`}
-              class={`${className}  text-sm leading-none w-full`}
-            >
-              {label}
-            </a>
+            {isFolderWithoutIndex(item) ? (
+              <span class="${className} no-underline text-sm leading-none w-full font-bold text-gray-400">
+                {label}
+              </span>
+            ) : (
+              <a
+                href={`/${item.slug}`}
+                class={`${className} no-underline text-sm leading-none w-full`}
+              >
+                {label}
+              </a>
+            )}
             {item.children.length > 0 && (
               <Astro.self items={item.children} level={level + 1} />
             )}
